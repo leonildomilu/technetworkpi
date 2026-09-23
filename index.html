@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Network · Suporte de TI para empresas</title>
+<meta name="description" content="Suporte de TI rápido, seguro e sem complicação. Atendimento remoto e presencial para reduzir interrupções, proteger seus dados e manter sua equipe produtiva.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b14;
+  --bg-2:#0b1120;
+  --surface:#0e1626;
+  --surface-2:#121c30;
+  --border:rgba(148,163,184,.16);
+  --border-2:rgba(148,163,184,.28);
+  --text:#e8eef9;
+  --muted:#94a3b8;
+  --muted-2:#64748b;
+  --accent:#5ad1f0;
+  --accent-dim:rgba(90,209,240,.14);
+  --ok:#34d399;
+  --ok-dim:rgba(52,211,153,.14);
+  --whats:#25d366;
+  --radius:14px;
+  --font-display:"Space Grotesk",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,sans-serif;
+  --maxw:1160px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+/* brilho ambiente fixo */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background:
+    radial-gradient(900px 480px at 78% -8%, rgba(90,209,240,.10), transparent 60%),
+    radial-gradient(700px 420px at -10% 30%, rgba(56,189,248,.06), transparent 60%);
+  pointer-events:none;z-index:0;
+}
+main,header,footer{position:relative;z-index:1}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ============ NAV ============ */
+.nav{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(7,11,20,.78);
+  border-bottom:1px solid var(--border);
+}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:700;font-size:17px;letter-spacing:.04em}
+.brand-icon{
+  height:42px;width:auto;display:block;
+  filter:drop-shadow(0 2px 12px rgba(90,209,240,.25));
+}
+.brand small{display:block;font-family:var(--font-body);font-weight:500;font-size:10.5px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:14.5px;color:var(--muted)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--font-body);font-weight:600;font-size:14.5px;
+  border-radius:10px;padding:11px 20px;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .15s, box-shadow .2s, background .2s, border-color .2s;
+  white-space:nowrap;
+}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--accent);color:#04222c;box-shadow:0 6px 24px rgba(90,209,240,.25)}
+.btn-primary:hover{background:#7dddf5;box-shadow:0 8px 30px rgba(90,209,240,.38)}
+.btn-ghost{border-color:var(--border-2);color:var(--text);background:transparent}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+.btn-lg{padding:15px 28px;font-size:15.5px;border-radius:12px}
+.nav .btn{padding:9px 18px;font-size:14px}
+.hamb{display:none;background:none;border:0;color:var(--text);cursor:pointer;padding:8px}
+.hamb svg{display:block}
+
+/* ============ HERO ============ */
+.hero{
+  padding:96px 0 104px;position:relative;
+  background:
+    linear-gradient(100deg, rgba(7,11,20,.96) 0%, rgba(7,11,20,.82) 44%, rgba(7,11,20,.55) 74%, rgba(7,11,20,.72) 100%),
+    url("assets/wallpaper.jpg") center/cover no-repeat;
+}
+@media (max-width:960px){
+  .hero{
+    background:
+      linear-gradient(180deg, rgba(7,11,20,.94) 0%, rgba(7,11,20,.85) 60%, rgba(7,11,20,.7) 100%),
+      url("assets/wallpaper.jpg") right center/cover no-repeat;
+  }
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--accent);
+  background:var(--accent-dim);border:1px solid rgba(90,209,240,.28);
+  padding:6px 14px;border-radius:999px;margin-bottom:22px;
+}
+.eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+h1{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(34px,4.6vw,52px);line-height:1.12;letter-spacing:-.015em;
+  margin-bottom:20px;
+}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:17.5px;color:var(--muted);max-width:52ch;margin-bottom:26px}
+.checks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:34px}
+.checks span{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--text)}
+.checks svg{flex:none;color:var(--ok)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+
+/* painel do hero */
+.panel{
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  border:1px solid var(--border-2);
+  border-radius:var(--radius);
+  box-shadow:0 30px 80px rgba(2,6,16,.55), 0 0 0 1px rgba(90,209,240,.05);
+  overflow:hidden;
+}
+.panel-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:12px 16px;border-bottom:1px solid var(--border);
+  background:rgba(7,11,20,.4);
+}
+.dot{width:10px;height:10px;border-radius:50%}
+.dot.r{background:#f87171}.dot.y{background:#fbbf24}.dot.g{background:#34d399}
+.panel-bar span{margin-left:auto;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--muted-2)}
+.panel-body{padding:22px 24px 24px}
+.panel-status{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.pulse{width:10px;height:10px;border-radius:50%;background:var(--ok);position:relative;flex:none}
+.pulse::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--ok);opacity:.5;animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.5);opacity:.7}100%{transform:scale(1.4);opacity:0}}
+.panel-status b{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:.01em}
+.panel-status small{color:var(--muted);font-size:13px;margin-left:auto}
+.panel-desc{font-size:13.5px;color:var(--muted);margin-bottom:18px}
+.mrow{
+  display:grid;grid-template-columns:1fr auto;gap:6px 12px;
+  padding:13px 0;border-top:1px solid var(--border);
+}
+.mrow b{font-size:14.5px;font-weight:600}
+.mrow small{grid-column:1;font-size:12.5px;color:var(--muted)}
+.mbar{width:120px;height:6px;border-radius:4px;background:rgba(148,163,184,.14);overflow:hidden;align-self:center}
+.mbar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,#0ea5c9,var(--accent))}
+.panel-foot{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--border);
+  font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;color:var(--muted-2);
+  display:flex;justify-content:space-between;gap:10px;
+}
+.panel-foot b{color:var(--ok);font-weight:500}
+
+/* ============ SECOES ============ */
+section{padding:84px 0}
+section.alt{background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.kicker{
+  font-family:var(--font-display);font-size:13px;font-weight:600;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:14px;
+}
+h2{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(26px,3.2vw,36px);line-height:1.18;letter-spacing:-.01em;
+  max-width:24ch;
+}
+.sec-head{max-width:640px;margin-bottom:52px}
+.sec-head p{margin-top:14px;color:var(--muted);font-size:16.5px}
+
+/* ============ FORM ============ */
+.form-card{
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  border:1px solid var(--border-2);
+  border-radius:18px;
+  display:grid;grid-template-columns:340px 1fr;
+  overflow:hidden;
+  box-shadow:0 24px 70px rgba(2,6,16,.5);
+}
+.form-side{padding:38px 34px;border-right:1px solid var(--border);background:rgba(7,11,20,.35)}
+.form-side h3{font-family:var(--font-display);font-size:21px;font-weight:600;margin-bottom:10px}
+.form-side p{font-size:14px;color:var(--muted);margin-bottom:24px}
+.form-side ul{list-style:none;display:grid;gap:13px}
+.form-side li{display:flex;gap:10px;font-size:14px;color:var(--muted);align-items:flex-start}
+.form-side li svg{flex:none;margin-top:3px;color:var(--accent)}
+.form-body{padding:38px 36px}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fgrid .full{grid-column:1/-1}
+label{display:block;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:7px}
+input,select,textarea{
+  width:100%;
+  background:rgba(7,11,20,.55);
+  border:1px solid var(--border-2);
+  border-radius:10px;
+  color:var(--text);
+  font-family:var(--font-body);font-size:15px;
+  padding:12px 14px;
+  transition:border-color .2s, box-shadow .2s;
+}
+input::placeholder,textarea::placeholder{color:var(--muted-2)}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(90,209,240,.15);
+}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394a3b8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+textarea{min-height:110px;resize:vertical}
+.form-note{display:flex;align-items:center;gap:9px;margin-top:16px;font-size:13.5px;color:var(--muted)}
+.form-note svg{flex:none;color:var(--whats)}
+.form-actions{margin-top:24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.form-actions small{color:var(--muted-2);font-size:12.5px}
+
+/* ============ SERVICOS ============ */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.svc{
+  border:1px solid var(--border);
+  background:var(--surface);
+  border-radius:var(--radius);
+  padding:28px 28px 30px;
+  position:relative;
+  transition:border-color .25s, transform .25s, background .25s;
+}
+.svc:hover{border-color:rgba(90,209,240,.45);transform:translateY(-3px);background:var(--surface-2)}
+.svc .idx{
+  font-family:var(--font-display);font-weight:700;font-size:14px;
+  color:var(--accent);letter-spacing:.1em;
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;
+}
+.svc .idx::after{content:"";height:1px;width:34px;background:rgba(90,209,240,.4)}
+.svc h3{font-family:var(--font-display);font-size:19.5px;font-weight:600;margin-bottom:9px}
+.svc p{font-size:14.5px;color:var(--muted)}
+
+/* ============ DIFERENCIAIS ============ */
+.dif-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:start}
+.dif-list{list-style:none;display:grid;gap:0;border-top:1px solid var(--border)}
+.dif-list li{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 6px;border-bottom:1px solid var(--border);
+  font-size:16px;font-weight:500;
+  transition:background .2s, padding-left .2s;
+}
+.dif-list li:hover{background:rgba(90,209,240,.05);padding-left:14px}
+.dif-list .n{
+  font-family:var(--font-display);font-size:13px;font-weight:600;color:var(--accent);
+  border:1px solid rgba(90,209,240,.3);border-radius:8px;
+  width:34px;height:34px;display:grid;place-items:center;flex:none;
+  background:var(--accent-dim);
+}
+.dif-list small{margin-left:auto;color:var(--muted-2);font-size:12.5px;font-weight:400}
+
+/* ============ COMO FUNCIONA ============ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+.step{
+  border:1px solid var(--border);border-radius:var(--radius);
+  background:var(--surface);padding:26px 24px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-family:var(--font-display);font-weight:700;font-size:15px;color:var(--accent);
+  letter-spacing:.08em;
+}
+.step h3{font-family:var(--font-display);font-size:17.5px;font-weight:600;margin:16px 0 8px}
+.step p{font-size:14px;color:var(--muted)}
+.step:not(:last-child)::after{
+  content:"→";position:absolute;top:24px;right:-15px;color:var(--muted-2);font-size:16px;z-index:2;
+}
+
+/* ============ CTA ============ */
+.cta{
+  text-align:center;position:relative;
+  background:
+    linear-gradient(180deg, rgba(7,11,20,.92) 0%, rgba(7,11,20,.8) 55%, rgba(7,11,20,.9) 100%),
+    url("assets/wallpaper.jpg") center 30%/cover no-repeat;
+}
+.cta h2{margin:0 auto 14px}
+.cta p{color:var(--muted);max-width:52ch;margin:0 auto 32px}
+.cta .btn-primary{background:var(--whats);color:#04220f;box-shadow:0 6px 26px rgba(37,211,102,.28)}
+.cta .btn-primary:hover{background:#3fe07a;box-shadow:0 10px 34px rgba(37,211,102,.4)}
+
+/* ============ FOOTER ============ */
+footer{border-top:1px solid var(--border);padding:44px 0 40px;background:var(--bg-2)}
+.foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-brand{display:flex;align-items:center;gap:14px}
+.foot-logo{height:64px;width:auto;filter:drop-shadow(0 2px 14px rgba(90,209,240,.2))}
+.foot-brand p{color:var(--muted);font-size:14px;max-width:34ch}
+.foot-contact{display:flex;flex-direction:column;gap:6px;font-size:14.5px;color:var(--muted)}
+.foot-contact a{color:var(--text);font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.foot-contact a:hover{color:var(--whats)}
+.foot small{color:var(--muted-2);font-size:12.5px;width:100%}
+
+/* FAB WhatsApp */
+.fab{
+  position:fixed;right:22px;bottom:22px;z-index:60;
+  width:56px;height:56px;border-radius:50%;
+  background:var(--whats);display:grid;place-items:center;
+  box-shadow:0 10px 30px rgba(37,211,102,.4);
+  transition:transform .2s;
+}
+.fab:hover{transform:scale(1.08)}
+.fab svg{width:28px;height:28px;fill:#fff}
+
+/* reveal on scroll */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+.rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .pulse::after{animation:none}
+}
+
+/* ============ RESPONSIVO ============ */
+@media (max-width:980px){
+  .hero{padding:64px 0}
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .form-card{grid-template-columns:1fr}
+  .form-side{border-right:0;border-bottom:1px solid var(--border);padding:30px 26px}
+  .form-body{padding:30px 26px}
+  .dif-grid{grid-template-columns:1fr;gap:36px}
+  .steps{grid-template-columns:1fr 1fr}
+  .step:not(:last-child)::after{display:none}
+  .nav-links{
+    position:fixed;inset:68px 0 auto 0;
+    flex-direction:column;gap:0;background:var(--bg-2);
+    border-bottom:1px solid var(--border);
+    display:none;padding:10px 0;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 24px;width:100%}
+  .nav .btn{display:none}
+  .hamb{display:block}
+}
+@media (max-width:600px){
+  section{padding:60px 0}
+  .fgrid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .mbar{width:80px}
+  .hero-cta .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Tech Network — início">
+      <img class="brand-icon" src="assets/logo-icon.png" alt="" width="496" height="456">
+      <span>TECH&nbsp;NETWORK<small>Soluções em tecnologia</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicos">O que fazemos</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+      <a class="btn btn-primary" href="#contato">Solicitar orçamento</a>
+    </nav>
+    <button class="hamb" id="hamb" aria-label="Abrir menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <span class="eyebrow"><i></i>Suporte técnico para empresas</span>
+      <h1>Suporte de TI <em>rápido, seguro</em> e sem complicação.</h1>
+      <p class="hero-sub">Atendimento remoto e presencial para reduzir interrupções, proteger seus dados e manter sua equipe produtiva.</p>
+      <div class="checks">
+        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento especializado</span>
+        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Remoto e presencial</span>
+        <span><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Soluções personalizadas</span>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-primary btn-lg" href="#contato">Solicite agora <span aria-hidden="true">↓</span></a>
+        <a class="btn btn-ghost btn-lg" id="heroWhats" href="#" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.95-4.36-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.2-.14.32-.29.5-.14.17-.3.39-.43.52-.14.14-.29.3-.12.58.16.29.73 1.22 1.57 1.98 1.08.98 1.99 1.28 2.28 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+          Orçamento pelo WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- painel mock -->
+    <div class="panel rv" aria-hidden="true">
+      <div class="panel-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span>tech-network · monitor</span>
+      </div>
+      <div class="panel-body">
+        <div class="panel-status">
+          <span class="pulse"></span>
+          <b>Operacional</b>
+          <small>todos os sistemas</small>
+        </div>
+        <p class="panel-desc">Visão geral da operação — tecnologia organizada para sua empresa.</p>
+
+        <div class="mrow">
+          <b>Suporte técnico</b>
+          <div class="mbar"><i style="width:92%"></i></div>
+          <small>Atendimento aos usuários</small>
+        </div>
+        <div class="mrow">
+          <b>Infraestrutura</b>
+          <div class="mbar"><i style="width:84%"></i></div>
+          <small>Redes e equipamentos</small>
+        </div>
+        <div class="mrow">
+          <b>Segurança</b>
+          <div class="mbar"><i style="width:88%"></i></div>
+          <small>Proteção de dados</small>
+        </div>
+        <div class="mrow">
+          <b>Produtividade</b>
+          <div class="mbar"><i style="width:95%"></i></div>
+          <small>Menos interrupções</small>
+        </div>
+
+        <div class="panel-foot">
+          <span>atendimento: <b>remoto + presencial</b></span>
+          <span>status: <b>ok</b></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORM ================= -->
+<section id="contato" class="alt">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Fale conosco</p>
+      <h2>Conte brevemente o que sua empresa precisa</h2>
+      <p>Preencha os dados abaixo. Ao enviar, as informações serão organizadas e encaminhadas para o atendimento comercial da Tech Network pelo WhatsApp.</p>
+    </div>
+
+    <div class="form-card rv">
+      <aside class="form-side">
+        <h3>Por que solicitar?</h3>
+        <p>Avaliação inicial sem compromisso, com retorno direto do nosso time comercial.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Preenchimento rápido e objetivo</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Contato direto com o atendimento comercial</li>
+          <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2.5 8.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sem compromisso para solicitar a avaliação inicial</li>
+        </ul>
+      </aside>
+
+      <form class="form-body" id="formWhats" novalidate>
+        <div class="fgrid">
+          <div>
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Como podemos te chamar?" required>
+          </div>
+          <div>
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required>
+          </div>
+          <div>
+            <label for="telefone">Telefone / WhatsApp</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+          </div>
+          <div>
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico" name="servico" required>
+              <option value="" disabled selected>Selecione…</option>
+              <option>Suporte técnico</option>
+              <option>Infraestrutura e redes</option>
+              <option>Consultoria em TI</option>
+              <option>Backup e segurança</option>
+              <option>Outro / não sei ainda</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" placeholder="Descreva brevemente a necessidade da sua empresa."></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-lg">Enviar solicitação →</button>
+          <small>O envio abrirá uma conversa no WhatsApp com os dados preenchidos.</small>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICOS ================= -->
+<section id="servicos">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">O que fazemos</p>
+      <h2>Soluções essenciais para manter sua empresa funcionando</h2>
+      <p>Tecnologia organizada, segura e adequada à realidade do seu negócio.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc rv">
+        <span class="idx">01</span>
+        <h3>Suporte técnico</h3>
+        <p>Atendimento para usuários, computadores, sistemas, impressoras e equipamentos.</p>
+      </article>
+      <article class="svc rv">
+        <span class="idx">02</span>
+        <h3>Infraestrutura e redes</h3>
+        <p>Redes, Wi-Fi, computadores, servidores e organização do ambiente tecnológico.</p>
+      </article>
+      <article class="svc rv">
+        <span class="idx">03</span>
+        <h3>Consultoria em TI</h3>
+        <p>Diagnóstico do ambiente e planejamento das melhorias necessárias.</p>
+      </article>
+      <article class="svc rv">
+        <span class="idx">04</span>
+        <h3>Backup e segurança</h3>
+        <p>Proteção de dados, controle de acessos e recuperação de informações.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIFERENCIAIS ================= -->
+<section id="diferenciais" class="alt">
+  <div class="wrap dif-grid">
+    <div class="rv">
+      <p class="kicker">Diferenciais</p>
+      <h2>Atendimento próximo e profissional</h2>
+    </div>
+    <ul class="dif-list rv">
+      <li><span class="n">01</span>Resposta rápida pelo WhatsApp</li>
+      <li><span class="n">02</span>Suporte remoto e presencial</li>
+      <li><span class="n">03</span>Soluções personalizadas</li>
+      <li><span class="n">04</span>Foco em segurança e produtividade</li>
+      <li><span class="n">05</span>Atendimento sem complicação</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= COMO FUNCIONA ================= -->
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="kicker">Como funciona</p>
+      <h2>Um atendimento simples e organizado</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Contato inicial</h3><p>Você informa a necessidade da empresa.</p></div>
+      <div class="step rv"><h3>Diagnóstico</h3><p>Analisamos o ambiente e o problema.</p></div>
+      <div class="step rv"><h3>Solução</h3><p>Planejamos e executamos o atendimento.</p></div>
+      <div class="step rv"><h3>Acompanhamento</h3><p>Apoiamos a empresa após a conclusão.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta">
+  <div class="wrap rv">
+    <h2>Precisa melhorar a tecnologia da sua empresa?</h2>
+    <p>Fale com a Tech Network e solicite uma avaliação.</p>
+    <a class="btn btn-primary btn-lg" id="ctaWhats" href="#" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.95-4.36-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.2-.14.32-.29.5-.14.17-.3.39-.43.52-.14.14-.29.3-.12.58.16.29.73 1.22 1.57 1.98 1.08.98 1.99 1.28 2.28 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+      Fale Conosco
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <div class="foot-brand">
+      <img class="foot-logo" src="assets/logo.png" alt="Tech Network — Soluções em tecnologia" width="284" height="308">
+      <p><strong>Tech Network</strong> — Soluções em tecnologia para empresas.</p>
+    </div>
+    <div class="foot-contact">
+      <a id="footWhats" href="#" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.95-4.36-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.2-.14.32-.29.5-.14.17-.3.39-.43.52-.14.14-.29.3-.12.58.16.29.73 1.22 1.57 1.98 1.08.98 1.99 1.28 2.28 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+        WhatsApp: (00) 00000-0000
+      </a>
+      <span>Suporte de TI para empresas</span>
+    </div>
+    <small>© <span id="year"></span> Tech Network. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<!-- FAB WhatsApp -->
+<a class="fab" id="fabWhats" href="#" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.3-1.39a9.87 9.87 0 0 0 4.74 1.21c5.46 0 9.9-4.44 9.9-9.9S17.5 2 12.04 2zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.34-.5.05-1.13.07-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.17-4.95-4.36-.14-.2-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.3.58-.37.78-.37h.56c.18 0 .42-.07.66.5.24.58.83 2.01.9 2.16.07.14.12.31.02.5-.1.2-.14.32-.29.5-.14.17-.3.39-.43.52-.14.14-.29.3-.12.58.16.29.73 1.22 1.57 1.98 1.08.98 1.99 1.28 2.28 1.42.29.14.46.12.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.64-.14.26.09 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+</a>
+
+<script>
+/* =========================================================
+   CONFIG — troque pelo número real da Tech Network
+   (somente DDI + DDD + número, sem espaços/traços)
+   ========================================================= */
+const WHATSAPP_NUMBER = "5500000000000"; // TODO: número real
+const MSG_PADRAO = "Olá! Gostaria de solicitar uma avaliação de TI para minha empresa.";
+
+function waLink(msg){
+  return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg || MSG_PADRAO);
+}
+["heroWhats","ctaWhats","footWhats","fabWhats"].forEach(id=>{
+  const el = document.getElementById(id);
+  if(el) el.href = waLink();
+});
+
+/* formulário -> WhatsApp */
+document.getElementById("formWhats").addEventListener("submit", function(e){
+  e.preventDefault();
+  const f = new FormData(this);
+  const nome = (f.get("nome")||"").toString().trim();
+  const empresa = (f.get("empresa")||"").toString().trim();
+  const tel = (f.get("telefone")||"").toString().trim();
+  const serv = (f.get("servico")||"").toString().trim();
+  const msg = (f.get("mensagem")||"").toString().trim();
+  if(!nome || !empresa || !tel || !serv){
+    alert("Preencha nome, empresa, telefone e serviço para continuar.");
+    return;
+  }
+  const texto =
+    "Solicitação de avaliação — Tech Network\n\n" +
+    "• Nome: " + nome + "\n" +
+    "• Empresa: " + empresa + "\n" +
+    "• Telefone: " + tel + "\n" +
+    "• Serviço: " + serv + "\n" +
+    (msg ? "• Mensagem: " + msg + "\n" : "");
+  window.open(waLink(texto), "_blank", "noopener");
+});
+
+/* menu mobile */
+const hamb = document.getElementById("hamb");
+const navLinks = document.getElementById("navLinks");
+hamb.addEventListener("click", ()=> navLinks.classList.toggle("open"));
+navLinks.querySelectorAll("a").forEach(a=> a.addEventListener("click", ()=> navLinks.classList.remove("open")));
+
+/* reveal on scroll */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add("on"); io.unobserve(en.target); } });
+},{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=> io.observe(el));
+
+/* ano no rodapé */
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

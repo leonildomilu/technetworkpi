@@ -1,43 +1,21 @@
-# Next.js on Netlify Platform Starter
+# Tech Network — Landing Page
 
-[Live Demo](https://nextjs-platform-starter.netlify.app/)
+Landing page da **Tech Network** — soluções em tecnologia e suporte de TI.
 
-A modern starter based on Next.js 16 (App Router), Tailwind, and [Netlify Core Primitives](https://docs.netlify.com/core/overview/#develop) (Edge Functions, Image CDN, Blob Store).
+Página estática (HTML + CSS + JS puro, sem dependências), tema escuro.
 
-In this site, Netlify Core Primitives are used both implictly for running Next.js features (e.g. Route Handlers, image optimization via `next/image`, and more) and also explicitly by the user code.
+## Conteúdo
+- Hero com painel de status do ambiente de TI
+- Formulário de contato que abre o WhatsApp com a mensagem preenchida
+- Seções: serviços, diferenciais, como funciona, CTA
+- Responsiva (desktop/tablet/mobile)
 
-Implicit usage means you're using any Next.js functionality and everything "just works" when deployed - all the plumbing is done for you. Explicit usage is framework-agnostic and typically provides more features than what Next.js exposes.
+## Assets
+| Arquivo | Uso |
+|---|---|
+| `assets/logo.png` | Logo completa (rodapé) |
+| `assets/logo-icon.png` | Ícone do cérebro (navbar) |
+| `assets/wallpaper.jpg` | Fundo do hero e do CTA |
 
-## Deploying to Netlify
-
-Click the button below to deploy this template to your Netlify account.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/next-platform-starter)
-
-## Developing Locally
-
-1. Clone this repository, then run `npm install` in its root directory.
-
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
-
-```
-npm install netlify-cli@latest -g
-```
-
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
-
-```
-netlify link
-```
-
-4. Then, run the Next.js development server via Netlify CLI:
-
-```
-netlify dev
-```
-
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
-
-## Resources
-
-- Check out the [Next.js on Netlify docs](https://docs.netlify.com/frameworks/next-js/overview/)
+## Publicação
+Estático — pode ser servido por qualquer host (Netlify, GitHub Pages, Vercel, etc.).
